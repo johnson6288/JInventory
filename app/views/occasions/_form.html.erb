@@ -1,0 +1,27 @@
+<%= form_with(model: occasion, local: true) do |form| %>
+  <% if occasion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(occasion.errors.count, "error") %> prohibited this occasion from being saved:</h2>
+
+      <ul>
+        <% occasion.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :occasionName %>
+    <%= form.text_field :occasionName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comments %>
+    <%= form.text_area :comments %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

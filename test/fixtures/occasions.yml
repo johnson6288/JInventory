@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  occasionName: MyString
+  comments: MyText
+
+two:
+  occasionName: MyString
+  comments: MyText

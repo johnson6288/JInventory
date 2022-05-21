@@ -1,0 +1,47 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% product.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :productName %>
+    <%= form.text_field :productName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :platform %>
+    <%= form.collection_select :platform_id, Platform.all, :id, :platformName, {prompt:"Choose a platform"} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.collection_select :status_id, Status.all, :id, :statusName, {prompt:"Choose a status"} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type %>
+    <%= form.collection_select :type_id, Type.all, :id, :typeName, {prompt:"Choose a type"} %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :occasion %>
+    <%= form.collection_select :occasion_id, Occasion.all, :id, :occasionName, {prompt:"Choose an occasion"} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comments %>
+    <%= form.text_area :comments %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

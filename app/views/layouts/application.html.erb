@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jinventory</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="<%= controller_name %> <%= action_name %>">
+  <header class="">
+    <%= render "layouts/header" %>
+  </header>
+
+  <div class="">		
+    <%# Content %>
+    <%= yield %>
+  </div>
+
+  <footer class="">
+    <%= render "layouts/footer" %>
+  </footer>
+
+  <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
+  
+
+</body>
+</html>
