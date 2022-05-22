@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>products</h1>
+<h1>Products</h1>
 
 <%# Search %>
     <div class="col-md-2 col-sm-12 bg-ltgrey my-3">
       <%= simple_form_for :search, url: products_path, method: "GET", html: { class: 'mt-4' } do |f| %>
-        <%= f.submit "Search", class: "btn btn-primary btn-sm w-100 primary-button mb-4" %>
         <%= f.input :product, input_html: {value: @search.nil? ? '' : @search["product"]}, label: false, required: false, class: "w-100" %>
-        
+        <%= f.submit "Search", class: "btn btn-primary btn-sm w-100 primary-button mb-4" %>
       <% end %>
 
 
