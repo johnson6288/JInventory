@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: heroku_8a32f3253da571c
+  database: heroku_d5c4b1a0aea774e
   # username: lugnuts
   # password: <%= ENV['LUGNUTS_DATABASE_PASSWORD'] %>
 
