@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
+  http_basic_authenticate_with name: "user", password: "qwerty1234", except: [:index, :show]
+
   # GET /products or /products.json
   def index
     @products = Product.all
